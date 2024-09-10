@@ -1,3 +1,5 @@
+FROM ros:jazzy-ros-core
+RUN apt-get install -y ros-jazzy-foxglove-bridge 
 FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -46,6 +48,7 @@ RUN apt update && apt install -y \
     ros-foxy-dynamixel-sdk \
     ros-foxy-gazebo-ros-pkgs 
 RUN apt install -y ros-foxy-desktop
+
 RUN rosdep init && rosdep update
 
 RUN curl -ssL http://get.gazebosim.org | sh
@@ -67,7 +70,7 @@ RUN /bin/bash -c "source /opt/ros/foxy/setup.bash; colcon build"
 # Source environments
 RUN echo "source /opt/ros/foxy/setup.bash" >> /root/.bashrc && \
     echo "source /turtlebot3_ws/install/setup.bash" >> /root/.bashrc && \
-    echo "export TURTLEBOT3_MODEL=waffle" >> /root/.bashrc
+    echo "export TURTLEBOT3_MODEL=burger" >> /root/.bashrc
 
 # Cleanup
 RUN rm -rf /var/lib/apt/lists/*
