@@ -1,5 +1,4 @@
-FROM ros:jazzy-ros-core
-RUN apt-get install -y ros-jazzy-foxglove-bridge 
+
 FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
