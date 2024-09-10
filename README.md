@@ -1,1 +1,1 @@
-#ros2 setup using a Docker conatiner
+#ros2 (foxy version) setup using a Docker conatiner
